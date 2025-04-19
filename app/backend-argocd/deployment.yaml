@@ -21,8 +21,9 @@ spec:
           ports:
             - containerPort: 8090
           volumeMounts:
-            - name: springboot-secrets
-              mountPath: "/secrets"
+            - name: config-volume
+              mountPath: /opt/app/BOOT-INF/classes/application.properties
+              subPath: application.properties
               readOnly: true
           livenessProbe:
             httpGet:
@@ -44,7 +45,7 @@ spec:
           #     cpu: "500m"
           #     memory: "512Mi"
       volumes:
-        - name: springboot-secrets
+        - name: config-volume
           secret:
             secretName: springboot-secrets
 
