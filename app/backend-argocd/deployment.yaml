@@ -26,18 +26,26 @@ spec:
                 secretKeyRef:
                   name: springboot-secrets
                   key: spring.datasource.url
-
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: springboot-secrets
                   key: spring.datasource.username
-                  
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: springboot-secrets
                   key: spring.datasource.password
+            - name: SPRING_MAIL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: springboot-secrets
+                  key: spring.mail.username
+            - name: SPRING_MAIL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: springboot-secrets
+                  key: spring.mail.password
           livenessProbe:
             httpGet:
               path: /actuator/health
