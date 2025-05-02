@@ -57,22 +57,22 @@ spec:
                   name: springboot-secrets
                   key: app.jwtExpirationMs
 
-          livenessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8090
-              initialDelaySeconds: 60
-              periodSeconds: 60
-              timeoutSeconds: 60
-              failureThreshold: 60
-          readinessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8090
-              initialDelaySeconds: 60
-              periodSeconds: 60
-              timeoutSeconds: 60
-              failureThreshold: 60
+          # livenessProbe:
+          #   httpGet:
+          #     path: /actuator/health
+          #     port: 8090
+          #     initialDelaySeconds: 60
+          #     periodSeconds: 60
+          #     timeoutSeconds: 60
+          #     failureThreshold: 60
+          # readinessProbe:
+          #   httpGet:
+          #     path: /actuator/health
+          #     port: 8090
+          #     initialDelaySeconds: 60
+          #     periodSeconds: 60
+          #     timeoutSeconds: 60
+          #     failureThreshold: 60
           # resources:
           #   requests:
           #     cpu: "250m"
